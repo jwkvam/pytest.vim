@@ -1076,7 +1076,8 @@ function! s:Pdb(path, ...)
     endif
 
     if has('nvim')
-        exe ":terminal! " . pdb_command
+        exe ":vsp term://" . pdb_command
+        exe ":startinsert"
     else
         exe ":!" . pdb_command
     endif
